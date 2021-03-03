@@ -1,0 +1,20 @@
+<input type="button" value="Delete" onclick="Delete(@item.id)" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+function Delete(id)
+            {
+                if (confirm("Are you sure ?")==true) {
+
+
+                    $.get("/Stud/StudDelete", { id: id }, function (res) {
+                        if (res) {
+                            location.reload();
+
+                        }
+                    });
+                }
+            }
+
+</script>
